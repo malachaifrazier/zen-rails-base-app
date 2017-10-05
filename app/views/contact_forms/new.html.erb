@@ -2,7 +2,7 @@
   <h1><%= t('.page_title') %></h1>
 </div>
 
-<%= form_for @contact_form, html: { class: "form-horizontal", role: "form" } do |f| %>
+<%= simple_form_for @contact_form, html: { class: "form-horizontal", role: "form" } do |f| %>
   <%# Custom helper to display internationalized validation errors %>
   <%= display_validation_errors(@contact_form) %>
 
@@ -11,7 +11,7 @@
     <div class="col-sm-2">
       <%# If the user is logged in, his name is automatically filled and
       the text field is made read-only %>
-      <%= f.text_field :name, class: "form-control",
+      <%= f.input :name, class: "form-control",
                        readonly: !!current_user,
                        value: current_user ? current_user.full_name : nil %>
     </div>
@@ -22,7 +22,7 @@
     <div class="col-sm-2">
       <%# If the user is logged in, his e-mail is automatically filled and
       the text field is made read-only %>
-      <%= f.text_field :email, class: "form-control",
+      <%= f.input :email, class: "form-control",
                        readonly: !!current_user,
                        value: current_user ? current_user.email : nil %>
     </div>
@@ -31,12 +31,12 @@
   <div class="form-group required">
     <%= f.label :message, class: "col-sm-2 control-label" %>
     <div class="col-sm-6">
-      <%= f.text_area :message, rows: 10, class: "form-control" %>
+      <%= f.input :message, rows: 10, class: "form-control" %>
     </div>
   </div>
 
-  <div class= "hidden">
-    <%= f.text_field :robot_honeypot,
+  <div class="hidden">
+    <%= f.input :robot_honeypot,
                      placeholder: t('.leave_this_field_blank') %>
   </div>
 
