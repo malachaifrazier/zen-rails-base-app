@@ -41,6 +41,7 @@ describe 'User management for admins', type: :feature, js: true do
         visit new_admin_user_path
         # Logging out programatically does not change the current page.
         logout(:user)
+        execute_script('window.scroll(0,1000);')
         click_button 'Create user'
         expect(page).to require_login_web
       end
@@ -48,6 +49,7 @@ describe 'User management for admins', type: :feature, js: true do
       it 'enforces authorization' do
         visit new_admin_user_path
         mock_pundit_authorize
+        execute_script('window.scroll(0,1000);')
         click_button 'Create user'
         # An internal server error happens here, possibly due to a limitation of
         # #expect_any_instance_of. Regardless, this test ensures that
@@ -57,20 +59,24 @@ describe 'User management for admins', type: :feature, js: true do
 
     it 'given valid input, creates a new user' do
       visit new_admin_user_path
-      expect do
-        # Implemented in spec/support/helpers/capybara_fill_user_fields.rb
-        fill_user_fields(valid_attributes)
-        click_button 'Create user'
-        # Keep this inside the expect block to ensure it waits until the new
-        # record is created before recounting records.
-        expect(page).to have_current_path(admin_user_path(User.last))
-      end.to change(User, :count).by(1)
+      within("form#new_user") do
+        expect {
+          # Implemented in spec/support/helpers/misc_test_helpers.rb
+          fill_user_fields(valid_attributes)
+          execute_script('window.scroll(0,1000);')
+          click_button("Create user")
+          # Keep this inside the expect block to ensure it waits until the new
+          # record is created before recounting records.
+          expect(page).to have_current_path(admin_user_path(User.last))
+        }.to change(User, :count).by(1)
+      end
       expect(page).to have_text 'successfully created.'
       expect(page).to have_text "Name #{valid_attributes[:first_name]}"
     end
 
     it 'given invalid input, re-renders the form' do
       visit new_admin_user_path
+      execute_script('window.scroll(0,1000);')
       click_button 'Create user'
       expect(page).to have_text 'Please fix the following'
     end
@@ -122,6 +128,7 @@ describe 'User management for admins', type: :feature, js: true do
       it 'requires login' do
         visit edit_admin_user_path(user)
         logout(:user)
+        execute_script('window.scroll(0,1000);')
         click_button 'Update user'
         expect(page).to require_login_web
       end
@@ -129,6 +136,7 @@ describe 'User management for admins', type: :feature, js: true do
       it 'enforces authorization' do
         visit edit_admin_user_path(user)
         mock_pundit_authorize
+        execute_script('window.scroll(0,1000);')
         click_button 'Update user'
         # An internal server error happens here, possibly due to a limitation of
         # #expect_any_instance_of. Regardless, this test ensures that
@@ -141,6 +149,7 @@ describe 'User management for admins', type: :feature, js: true do
       # Test the app's ability to update a user without changing its password
       fill_user_fields(valid_attributes.except(:password,
                                                :password_confirmation))
+      execute_script('window.scroll(0,1000);')
       click_button 'Update user'
       expect(page).to have_current_path(admin_user_path(User.last))
       expect(page).to have_text 'successfully updated.'
@@ -150,6 +159,7 @@ describe 'User management for admins', type: :feature, js: true do
     it 'given invalid input, re-renders the form' do
       visit edit_admin_user_path(user)
       fill_in 'E-mail', with: ''
+      execute_script('window.scroll(0,1000);')
       click_button 'Update user'
       expect(page).to have_text 'Please fix the following'
     end
