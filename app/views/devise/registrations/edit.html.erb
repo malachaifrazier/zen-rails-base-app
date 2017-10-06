@@ -32,10 +32,13 @@
         hint: 'we need your current password to confirm your changes' %>
       </div>
 
-      <%# We have added custom attributed to the User model. The corresponding
-      form fields reside in a partial that is shared between the new and edit
-      views%>
-      <%= render partial: "custom_fields", locals: {f: f} %>
+      <div class="form-group">
+        <%= f.input :first_name, class: "form-control" %>
+      </div>
+
+      <div class="form-group">
+        <%= f.input :last_name, label: 'Last name', class: "form-control" %>
+      </div>
 
       <%= f.submit t('.update', default: "Update"), class: "btn btn-primary" %>
     <% end %>
