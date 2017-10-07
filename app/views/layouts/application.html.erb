@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= content_for?(:title) ? yield(:title) : "Project Name" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : ENV["app_name"] %></title>
     <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Insert description" %>">
     <%= csrf_meta_tags %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -25,7 +25,7 @@
               <span class="icon-bar"></span>
             </button>
             <a class="navbar-brand" href="#">
-              <%= link_to image_tag('logo.png'), root_path, class: 'navbar-brand', alt: 'Project Name' %>
+              <%= link_to image_tag('logo.png'), root_path, class: 'navbar-brand', alt: ENV['app_name'] %>
             </a>
           </div>
 
@@ -96,7 +96,7 @@
         <div class="row">
           <footer class="footer">
             <div class="container">
-              <p class="text-muted">&copy; Project Name</p>
+              <p class="text-muted">&copy; <%= ENV['app_name'] %></p>
             </div>
           </footer>
         </div>
