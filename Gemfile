@@ -60,6 +60,8 @@ gem 'ransack'
 gem 'select2-rails'
 # Get e-mail notifications when exceptions happen in the production environment
 gem 'exception_notification'
+# Simple Rails app configuration
+gem 'figaro'
 
 group :test do
   gem 'database_cleaner'
@@ -69,6 +71,7 @@ group :development, :test do
   # Detects N+1 queries and unused eager loading
   gem 'bullet'
   gem 'pry-rails'
+  gem 'pry-doc'
   gem 'capybara', '~> 2.15', '>= 2.15.1'
   gem 'capybara-email'
   gem 'capybara-screenshot'
@@ -95,8 +98,6 @@ group :development do
   # Open "sent" e-mails in your browser instead of actually sending them
   gem 'letter_opener'
   gem 'listen', '~> 3.1', '>= 3.1.5'
-  gem 'pry-rails'
-  gem 'pry-doc'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
   # Database, call-stack and memory profiling
