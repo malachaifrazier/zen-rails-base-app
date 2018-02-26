@@ -31,13 +31,13 @@ $gray-lightest: lighten(#000, 98%);
 
 // Page headers (no variable available)
 .page-header {
-  margin-top: 0px !important;
+  margin-top: 0rem !important;
   a.btn {
     float: right;
   }
 
   a.btn + a.btn {
-    margin-right: 8px;
+    margin-right: 0.5rem;
   }
 }
 
@@ -45,8 +45,8 @@ $gray-lightest: lighten(#000, 98%);
 $body-bg: white;
 
 body {
-  padding-right: 30px;
-  padding-left: 30px;
+  padding-right: 1.875rem;
+  padding-left: 1.875rem;
 }
 
 // Alerts and form feedback states
@@ -61,7 +61,7 @@ $link-hover-decoration: underline;
 
 // Text
 $text-color:              #444;
-$font-size-base:          14px;
+$font-size-base:          0.875rem;
 $font-family-sans-serif:
   // Safari for OS X and iOS (San Francisco)
   -apple-system,
@@ -118,7 +118,7 @@ $input-border-focus:  $brand-lighter;
 // them in a div with the field_with_errors class.
 .field_with_errors {
   input, select {
-    border: 1px solid #A94442;
+    border: 0.0625rem solid #A94442;
   }
 }
 
@@ -146,13 +146,13 @@ label, dt {
   }
   > .panel-body {
     background-color: $gray-lightest !important;
-    font-size: 13px !important;
+    font-size: 0.8125rem !important;
     font-weight: normal !important;
   }
 }
 
 // Navbar
-$navbar-height:                      50px;
+$navbar-height:                      3.125rem;
 $navbar-default-color:               white;
 $navbar-default-bg:                  desaturate($brand-primary, 10%);
 $navbar-default-link-color:          white;
@@ -170,12 +170,12 @@ $navbar-default-link-disabled-bg:    $brand-light;
 
 // Prevent navbar from covering other elements
 body {
-  padding-top: $navbar-height + 20px;
+  padding-top: $navbar-height + 1.25rem;
 }
 
 // Centralize logo vertically in the navbar
 .navbar-brand {
-  padding-top: 10px !important;
+  padding-top: 0.625rem !important;
 }
 
 // Pagination
@@ -192,11 +192,11 @@ $pagination-active-bg:     $brand-primary;
 $pagination-active-border: transparent;
 
 // Tooltips
-$tooltip-max-width:   200px;
+$tooltip-max-width:   12.5rem;
 $tooltip-color:       white;
 $tooltip-bg:          $brand-primary;
 $tooltip-opacity:     .9;
-$tooltip-arrow-width: 5px;
+$tooltip-arrow-width: 0.3125rem;
 $tooltip-arrow-color: $tooltip-bg;
 
 // Progress bar
@@ -204,7 +204,7 @@ $progress-bar-bg: $brand-primary;
 
 // Description lists
 dt, dd {
-  padding: 5px 0 5px 0;
+  padding: 0.3125rem 0 0.3125rem 0;
 }
 
 // Fix Bootstrap's center-block class used to center block elements horizontally.
@@ -213,14 +213,14 @@ dt, dd {
 
 // Footer
 .footer {
-  margin-top: 10px;
+  margin-top: 0.625rem;
 }
 
 // Tables for index views
 .custom-index-table {
   // "Actions" column of the index tables
   th:last-of-type {
-    width: 120px;
+    width: 11.25rem;
   }
   td:last-of-type {
     text-align: center;
@@ -230,7 +230,7 @@ dt, dd {
   }
   th, td {
     vertical-align: middle !important;
-    padding: 10px !important;
+    padding: 0.625rem !important;
   }
   th {
     text-align: center;
@@ -244,36 +244,36 @@ dt, dd {
 // Rounder borders
 .table-curved {
   border-collapse: separate;
-  border: solid $gray-lighter 1px;
-  border-radius: 6px;
-  border-left: 0px;
-  border-top: 0px;
+  border: solid $gray-lighter 0.0625rem;
+  border-radius: 0.375rem;
+  border-left: 0rem;
+  border-top: 0rem;
 
   thead:first-child tr:first-child th {
-    border-bottom: 0px;
-    border-top: solid $gray-lighter 1px;
+    border-bottom: 0rem;
+    border-top: solid $gray-lighter 0.0625rem;
   }
 
   td, th {
-    border-left: 1px solid $gray-lighter;
-    border-top: 1px solid $gray-lighter;
+    border-left: 0.0625rem solid $gray-lighter;
+    border-top: 0.0625rem solid $gray-lighter;
   }
 
   :first-child :first-child {
     :first-child {
-      border-top-left-radius: 6px;
+      border-top-left-radius: 0.375rem;
     }
     :last-child {
-      border-top-right-radius: 6px;
+      border-top-right-radius: 0.375rem;
     }
   }
 
   :last-child :last-child {
     :first-child {
-      border-bottom-left-radius: 6px;
+      border-bottom-left-radius: 0.375rem;
     }
     :last-child {
-      border-bottom-right-radius: 6px;
+      border-bottom-right-radius: 0.375rem;
     }
   }
 }
@@ -281,7 +281,7 @@ dt, dd {
 // Action glyphicons (show, edit, delete, etc)
 .action-icon {
   font-size: 1.2em; // Glyphicon size
-  margin: 2px;
+  margin: 0.125rem;
   color: $brand-primary !important; // Glyphicon color
   &:hover, &:focus {
     color: $link-hover-color !important;
