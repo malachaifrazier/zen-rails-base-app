@@ -1,12 +1,21 @@
 # Simple helpers that are used across multiple specs.
 module MiscTestHelpers
-  def fill_user_fields(valid_attributes)
+  def fill_passwords_and_emails(valid_attributes)
     attr = valid_attributes
     fill_in 'E-mail', with: attr[:email] if attr[:email]
     fill_in 'Password', with: attr[:password] if attr[:password]
     fill_in 'Password confirmation', with: attr[:password] if attr[:password]
+  end
+
+  def fill_user_fields(valid_attributes)
+    attr = valid_attributes
+    fill_passwords_and_emails(attr)
     fill_in 'First name', with: attr[:first_name] if attr[:first_name]
     fill_in 'Last name', with: attr[:last_name] if attr[:last_name]
+  end
+
+  def fill_user_fields_without_names(valid_attributes)
+    fill_passwords_and_emails(valid_attributes)
   end
 
   # Ensure a controller action calls Pundit's #authorize method to enforce

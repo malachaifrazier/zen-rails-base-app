@@ -12,7 +12,6 @@ module Admin
       Admin::UserPolicy
     end
 
-    # GET /admin/users
     def index
       # This ivar is not used in the view, only as input to Ransack. There is
       # no need to eager load associations here, Ransack avoids N+1 queries.
@@ -23,23 +22,19 @@ module Admin
       @users = @q.result.page(params[:page])
     end
 
-    # GET /admin/users/1
     def show
       authorize @user
     end
 
-    # GET /admin/users/new
     def new
       @user = User.new
       authorize @user
     end
 
-    # GET /admin/users/1/edit
     def edit
       authorize @user
     end
 
-    # POST /admin/users
     def create
       @user = User.new(user_params)
       authorize @user
@@ -51,7 +46,6 @@ module Admin
       end
     end
 
-    # PATCH/PUT /admin/users/1
     def update
       authorize @user
 
@@ -73,7 +67,6 @@ module Admin
       end
     end
 
-    # DELETE /admin/users/1
     def destroy
       authorize @user
 
@@ -83,12 +76,10 @@ module Admin
 
     private
 
-    # Use callbacks to share common setup or constraints between actions.
     def set_user
       @user = User.friendly.find(params[:id])
     end
 
-    # Strong parameters
     def user_params
       params.require(:user).permit(:email, :password, :password_confirmation,
                                    :role, :first_name, :last_name)

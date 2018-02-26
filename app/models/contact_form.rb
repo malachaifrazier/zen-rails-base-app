@@ -13,7 +13,7 @@ class ContactForm < MailForm::Base
   # in ActionMailer accepts.
   def headers
     {
-      subject: 'Project Name - Message sent via contact form',
+      subject: "#{ENV['app_name']}".concat(' - Message sent via contact form'),
       to: 'replace@me.com',
       from: %("#{name}" <#{email}>)
     }

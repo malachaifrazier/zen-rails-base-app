@@ -8,6 +8,7 @@ describe 'Contact form via UI', type: :feature, js: true do
     fill_in 'Name', with: valid_attributes[:name]
     fill_in 'Email', with: valid_attributes[:email]
     fill_in 'Message', with: valid_attributes[:message]
+    execute_script('window.scroll(0,1000);')
     click_on 'Send message'
 
     # Open last sent e-mail and set current_email variable

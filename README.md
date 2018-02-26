@@ -157,7 +157,6 @@ gem](https://github.com/twitter/secureheaders).
 - Set up continuous integration.
 - Use Yarn instead of gems to install front end libraries such as jQuery and 
 Select2.
-- Add an asterisk to the labels of required form fields.
 - Internationalize and translate the JS front end, mainly `global.js` and 
 `zen-utils.js`.
 

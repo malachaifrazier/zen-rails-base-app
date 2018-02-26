@@ -10,7 +10,7 @@ gem 'pg', '~> 0.21.0'
 # gem 'mysql2', '~> 0.4.9'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.3'
+gem 'rails', '~> 5.1.5'
 # Use Puma as the app server
 gem 'puma', '~> 3.10'
 # Use SCSS for stylesheets
@@ -27,6 +27,7 @@ gem 'jbuilder', '~> 2.7'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
+gem 'simple_form'
 gem 'bootstrap-sass'
 # List of countries and their respective states and cities
 gem 'city-state'
@@ -59,6 +60,8 @@ gem 'ransack'
 gem 'select2-rails'
 # Get e-mail notifications when exceptions happen in the production environment
 gem 'exception_notification'
+# Simple Rails app configuration
+gem 'figaro'
 
 group :test do
   gem 'database_cleaner'
@@ -67,9 +70,8 @@ end
 group :development, :test do
   # Detects N+1 queries and unused eager loading
   gem 'bullet'
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger
-  # console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'pry-rails'
+  gem 'pry-doc'
   gem 'capybara', '~> 2.15', '>= 2.15.1'
   gem 'capybara-email'
   gem 'capybara-screenshot'
@@ -96,8 +98,6 @@ group :development do
   # Open "sent" e-mails in your browser instead of actually sending them
   gem 'letter_opener'
   gem 'listen', '~> 3.1', '>= 3.1.5'
-  gem 'pry-rails'
-  gem 'pry-doc'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0', '>= 2.0.1'
   # Database, call-stack and memory profiling
