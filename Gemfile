@@ -28,7 +28,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 gem 'simple_form'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
 # List of countries and their respective states and cities
 gem 'city-state'
 # Authentication
