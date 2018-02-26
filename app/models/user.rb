@@ -23,6 +23,15 @@ class User < ApplicationRecord
   devise :confirmable, :database_authenticatable, :lockable, :registerable,
          :recoverable, :rememberable, :timeoutable, :trackable, :validatable
 
+  # devise :database_authenticatable, :registerable,
+  #        :recoverable, :rememberable, :trackable, :validatable
+
+  # validates :password, presence: true, on: :create, length: { within: 6..40 }
+  # validates :email, presence: true, uniqueness: true,
+  #           format: {
+  #             with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  #           }
+
   # Allow a single Ransack search field to search the virtual attr 'full_name'
   # If first_name is 'John' and last_name is 'Doe', this will enable us to
   # search for 'John', 'Doe' or 'John Doe' using the 'cont' predicate.
