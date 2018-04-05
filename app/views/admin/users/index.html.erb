@@ -1,20 +1,28 @@
-<div class="row">
-  <div class="page-header">
+<div class="row justify-content-between">
+  <section>
+    <h1 class='display-5 section-heading text-uppercase'>
+      <%= t(".page_title") %>
+    </h1>
+  </section>
+
+  <section>
     <%= link_to new_admin_user_path, class: "btn btn-primary" do %>
-      <span class="glyphicon glyphicon-plus"></span>
+      <i class="fas fa-plus"></i>
       <%= t("actions.new") %>
     <% end %>
-    <h1><%= t(".page_title") %></h1>
-  </div>
+  </section>
 </div>
 
+<hr>
 <div class="row">
   <%# Even though this is the right column, it's code should be above tha data
   table's code, so the filters are on top of the table on mobile devices %>
   <div class="col-md-3 col-md-push-9">
-    <div class="panel panel-default filter">
-      <div class="panel-heading"><%= t("filters.filters") %></div>
-      <div class="panel-body">
+    <div class="card card-default filter">
+      <div class="card-header">
+        <%= t("filters.filters") %>
+      </div>
+      <div class="card-body">
         <%# Search and filters provided by the Ransack gem. %>
         <%= search_form_for [:admin, @q] do |f| %>
           <div class="form-group">
@@ -44,10 +52,10 @@
                         request.path,
                         class:"btn btn-primary" %>
           </div>
-        </div>
+        <% end %>
       </div>
     </div>
-  <% end %>
+  </div>
 
   <div class="col-md-9 col-md-pull-3">
     <div class="table-responsive">
