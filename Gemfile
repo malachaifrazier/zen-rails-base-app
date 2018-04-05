@@ -9,8 +9,11 @@ end
 gem 'pg', '~> 0.21.0'
 # gem 'mysql2', '~> 0.4.9'
 
+# https://github.com/tomkra/font_awesome5_rails
+gem 'font_awesome5_rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.5'
+gem 'rails', '~> 5.1.6'
 # Use Puma as the app server
 gem 'puma', '~> 3.10'
 # Use SCSS for stylesheets
@@ -28,7 +31,8 @@ gem 'jbuilder', '~> 2.7'
 # gem 'bcrypt', '~> 3.1', '>= 3.1.11'
 
 gem 'simple_form'
-gem 'bootstrap-sass'
+# gem 'bootstrap-sass'
+gem 'bootstrap', '~> 4.0.0'
 # List of countries and their respective states and cities
 gem 'city-state'
 # Authentication

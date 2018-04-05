@@ -1,7 +1,9 @@
 <% content_for :navigation_menu do %>
   <%# Menu items that that should only appear in the navbar of users with
   "admin" role %>
-  <li><%= link_to t('navigation.users'), admin_users_path %></li>
+  <li class='nav-item'>
+    <%= link_to t('navigation.users'), admin_users_path, class: 'nav-link' %>
+  </li>
 
   <%= render 'layouts/base_menu_items' %>
 <% end %>

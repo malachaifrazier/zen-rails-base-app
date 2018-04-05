@@ -11,7 +11,7 @@ describe 'layout and UI elements', type: :feature, js: true do
     it 'displays the appropriate layout and UI elements' do
       visit '/'
       expect(page).to have_selector 'body.guest-layout'
-      within '.navbar-default' do
+      within '#mainNav' do
         expect(page).to have_link(I18n.t('navigation.home'),
                                   href: root_path)
         expect(page).to have_link(I18n.t('navigation.contact'),
