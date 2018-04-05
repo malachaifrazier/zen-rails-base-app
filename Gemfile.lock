@@ -111,6 +111,8 @@ GEM
     figaro (1.1.1)
       thor (~> 0.14)
     flamegraph (0.9.5)
+    font_awesome5_rails (0.3.0)
+      railties (>= 4.2, < 5.2)
     friendly_id (5.2.3)
       activerecord (>= 4.0.0)
     globalid (0.4.1)
@@ -341,6 +343,7 @@ DEPENDENCIES
   faker
   figaro
   flamegraph
+  font_awesome5_rails
   friendly_id
   jbuilder (~> 2.7)
   jquery-rails

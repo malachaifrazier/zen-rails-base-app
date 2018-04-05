@@ -9,6 +9,9 @@ end
 gem 'pg', '~> 0.21.0'
 # gem 'mysql2', '~> 0.4.9'
 
+# https://github.com/tomkra/font_awesome5_rails
+gem 'font_awesome5_rails'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use Puma as the app server
